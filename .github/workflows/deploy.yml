@@ -25,11 +25,6 @@ jobs:
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/simplephp:latest .
 
-      # Step 4: Push the Docker image to Docker Hub
-      - name: Push Docker Image to Docker Hub
-        run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/simplephp:latest
-
       # Step 5: Deploy to DigitalOcean Droplet
       - name: Deploy to DigitalOcean Droplet
         uses: appleboy/ssh-action@v0.1.8
